@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Jogo das Setas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Nível <span id="level">1</span></h1>
+    <div id="timer">⏱ Tempo: 00:00</div>
+  </header>
+
+  <main>
+    <section id="left-panel">
+      <div id="arrows-palette">
+        <div class="arrow-palette" draggable="true" data-dir="up">⬆️</div>
+        <div class="arrow-palette" draggable="true" data-dir="right">➡️</div>
+        <div class="arrow-palette" draggable="true" data-dir="down">⬇️</div>
+        <div class="arrow-palette" draggable="true" data-dir="left">⬅️</div>
+      </div>
+
+      <div id="settings">
+        <label for="maxSteps">Passos permitidos:</label>
+        <input id="maxSteps" type="number" min="1" max="50" value="8">
+        <button id="setSteps">Definir passos</button>
+        <div id="remainingWrap">Restantes: <span id="remaining">8</span></div>
+      </div>
+
+      <div id="buttons">
+        <button id="play">▶️ Play</button>
+        <button id="reset">🔄 Reset</button>
+        <button id="soundToggle">🔈 Som</button>
+      </div>
+
+      <div id="instructions">
+        <p>Arraste setas para as células do tabuleiro.</p>
+        <p>Duplo clique na seta para removê-la.</p>
+      </div>
+    </section>
+
+    <section id="game-wrap">
+      <div id="game"></div>
+    </section>
+  </main>
+
+  <!-- Sons -->
+  <audio id="theme" src="sounds/theme.mp3" loop preload="auto"></audio>
+  <audio id="step-sound" src="sounds/step.mp3" preload="auto"></audio>
+  <audio id="lose-sound" src="sounds/lose.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

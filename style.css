@@ -1,0 +1,125 @@
+:root {
+  --cell-size: 50px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background: #4caf50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#timer {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+#left-panel {
+  width: 220px;
+  padding: 10px;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#arrows-palette {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.arrow-palette {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: white;
+  cursor: grab;
+}
+
+#buttons button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+#game-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game {
+  display: grid;
+  gap: 2px;
+  background: #ddd;
+  padding: 5px;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid #aaa;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+#player {
+  width: 80%;
+  height: 80%;
+  background: blue;
+  border-radius: 50%;
+}
+
+#goal {
+  width: 80%;
+  height: 80%;
+  background: gold;
+  border-radius: 5px;
+}
+
+/* Obstáculos */
+.wall {
+  /* Define a imagem de fundo */
+    background-image: url('image/obstacle.png');
+    /* Evita a repetição da imagem */
+    background-repeat: no-repeat;
+    /* Centraliza a imagem */
+    background-position: center center;
+    /* Define o tamanho para cobrir o background */
+    background-size: cover;
+    /* Define uma cor de fundo caso a imagem não carregue */
+    background-color: #444;
+
+}
+
+.grid-arrow {
+  position: absolute;
+  font-size: 1.2rem;
+}
