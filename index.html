@@ -1,54 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <title>Jogo das Setas</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Pathway - Level 1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Nível <span id="level">1</span></h1>
-    <div id="timer">⏱ Tempo: 00:00</div>
-  </header>
+    <h1>Arrow Pathway - Level 1</h1>
+    
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    
+    <div class="controls">
+        <p>Setas Restantes: <span id="arrowCount"></span></p>
 
-  <main>
-    <section id="left-panel">
-      <div id="arrows-palette">
-        <div class="arrow-palette" draggable="true" data-dir="up">⬆️</div>
-        <div class="arrow-palette" draggable="true" data-dir="right">➡️</div>
-        <div class="arrow-palette" draggable="true" data-dir="down">⬇️</div>
-        <div class="arrow-palette" draggable="true" data-dir="left">⬅️</div>
-      </div>
+        <label for="arrowDirection">Direção da Seta:</label>
+        <select id="arrowDirection">
+            <option value="up">Cima ↑</option>
+            <option value="down">Baixo ↓</option>
+            <option value="left">Esquerda ←</option>
+            <option value="right" selected>Direita →</option>
+        </select>
+        <button id="placeArrowBtn">Colocar/Editar Seta</button>
+        <button id="removeArrowBtn">Remover Seta</button>
+        
+        <hr>
+        
+        <button id="startBtn">▶ Iniciar Movimento</button>
+        <button id="resetBtn">⟲ Resetar Nível</button>
+    </div>
 
-      <div id="settings">
-        <label for="maxSteps">Passos permitidos:</label>
-        <input id="maxSteps" type="number" min="1" max="50" value="8">
-        <button id="setSteps">Definir passos</button>
-        <div id="remainingWrap">Restantes: <span id="remaining">8</span></div>
-      </div>
+    <div class="game-info">
+        <p>Regras: O personagem **sempre se move para a direita**, a menos que encontre uma seta para mudar sua direção.</p>
+        <p>Clique em um bloco vazio e use "Colocar/Editar Seta" para definir o caminho.</p>
+    </div>
 
-      <div id="buttons">
-        <button id="play">▶️ Play</button>
-        <button id="reset">🔄 Reset</button>
-        <button id="soundToggle">🔈 Som</button>
-      </div>
-
-      <div id="instructions">
-        <p>Arraste setas para as células do tabuleiro.</p>
-        <p>Duplo clique na seta para removê-la.</p>
-      </div>
-    </section>
-
-    <section id="game-wrap">
-      <div id="game"></div>
-    </section>
-  </main>
-
-  <!-- Sons -->
-  <audio id="theme" src="sounds/theme.mp3" loop preload="auto"></audio>
-  <audio id="step-sound" src="sounds/step.mp3" preload="auto"></audio>
-  <audio id="lose-sound" src="sounds/lose.mp3" preload="auto"></audio>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
